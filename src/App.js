@@ -1,8 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const SlateTransformer = require("@accordproject/markdown-slate")
+    .SlateTransformer;
+  const slateTransformer = new SlateTransformer();
+  const slateValue = slateTransformer.fromMarkdown(
+    'test <variable id="foo" value="bar"/>'
+  );
+
   return (
     <div className="App">
       <header className="App-header">
